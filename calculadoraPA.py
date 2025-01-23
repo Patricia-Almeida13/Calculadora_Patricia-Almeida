@@ -13,11 +13,11 @@ def calculadora(num1: float, num2: float, operador: str) -> float:
     elif operador == '-':
         result = num1 - num2
     elif operador == '/':
-        result = num1 / num2
+            if num2 == 0:
+                return float("nan")
+            result = num1 / num2
     elif operador == '*':
         result = num1 * num2
-    if operador == '/' and num2 == 0:
-        raise ValueError("Erro: Divisão por zero não é permitida.")
     return result
 
 def calculadora_v2(num1: float, num2: float, operador: str) -> float:
